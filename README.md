@@ -6,4 +6,4 @@
 
 ![snake game](/public/images/snake2.png)
 
-### Built with [Phaser](https://phaser.io/).
+### Built with [Phaser](https://phaser.io/)
