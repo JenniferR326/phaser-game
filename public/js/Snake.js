@@ -81,5 +81,19 @@ export default class Snake {
     }
     this.body[0].x = x;
     this.body[0].y = y;
+    // Snake dies by going off screen
+    if (
+      this.body[0].x < 0 ||
+      this.body[0].x >= this.scene.game.config.width ||
+      this.body[0].y < 0 ||
+      this.body[0].y >= this.scene.game.config.height
+    ) {
+      this.scene.scene.restart();
+    }
+    // Snake dies by eating its own tail
+    let tail = this.body.slice(1);
+    if (tail.some((s) => s.x === this.body[0].x && s.y === this.body[0].y)) {
+      this.scene.scene.restart();
+    }
   }
 }
